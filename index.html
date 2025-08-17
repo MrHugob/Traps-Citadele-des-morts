@@ -2,23 +2,62 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Aide Mémoire – Sélecteurs par image</title>
+  <title>Aide Mémoire – Sélecteurs (compact)</title>
   <style>
-    body{background:#1e1e1e;color:#fff;font-family:Arial,Helvetica,sans-serif;margin:20px}
-    .item{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-    .item img{width:220px;max-width:100%;border:2px solid #ff3b3b;border-radius:8px;display:block;background:#2a2a2a}
-    .right{display:flex;align-items:center;gap:10px}
-    .right label{min-width:110px;font-weight:700}
-    select{padding:8px 10px;background:#2b2b2b;color:#fff;border:1px solid #555;border-radius:8px;font-weight:700}
-    option[disabled]{color:#aaa}
-    .note{max-width:400px;font-size:14px;line-height:1.4;color:#ddd}
+    /* Base */
+    :root{
+      --bg:#1e1e1e; --fg:#fff; --muted:#cfcfcf; --accent:#ff3b3b; --card:#262626;
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif}
+    body{padding:16px}
+
+    /* Rangée compacte: image + menu collés */
+    .item{
+      display:flex; align-items:center; gap:10px;
+      background:var(--card); border:1px solid #333; border-radius:10px;
+      padding:10px 12px; margin:10px 0;
+    }
+
+    /* Image compacte */
+    .trap-img, .map-img{
+      width:220px;   /* compact par défaut */
+      height:auto;
+      border:2px solid var(--accent);
+      border-radius:10px;
+      background:#141414;
+      display:block;
+    }
+    .trap-img{ padding:3px; } /* petit padding pour les pièges */
+
+    /* Colonne droite compacte */
+    .right{ display:flex; align-items:center; gap:10px }
+    .right label{ font-weight:700; min-width:110px }
+    select{
+      padding:6px 10px; border-radius:8px; border:1px solid #555;
+      background:#2b2b2b; color:#fff; font-weight:700;
+    }
+    option[disabled]{ color:#aaa }
+
+    /* Note à côté de la map (compact) */
+    .note{ max-width:420px; font-size:13px; line-height:1.35; color:var(--muted) }
+
+    /* Effet survol */
+    .trap-img:hover{ border-color:#ffd24d; cursor:pointer }
+
+    /* Responsive: très compact sur petits écrans */
+    @media (max-width: 680px){
+      .item{ flex-direction:column; align-items:flex-start; gap:8px; padding:10px }
+      .trap-img, .map-img{ width: 180px }
+      .right{ width:100%; justify-content:space-between }
+      .right label{ min-width:auto }
+    }
   </style>
 </head>
 <body>
 
   <!-- Four-Point -->
   <div class="item">
-    <img src="images/four_point.PNG" alt="Four Point">
+    <img class="trap-img" src="images/four_point.PNG" alt="Four Point">
     <div class="right">
       <label for="s1">Four-Point</label>
       <select id="s1">
@@ -30,7 +69,7 @@
 
   <!-- Circle -->
   <div class="item">
-    <img src="images/circle.PNG" alt="Circle">
+    <img class="trap-img" src="images/circle.PNG" alt="Circle">
     <div class="right">
       <label for="s2">Circle</label>
       <select id="s2">
@@ -42,7 +81,7 @@
 
   <!-- Eight-Point -->
   <div class="item">
-    <img src="images/eight_point.PNG" alt="Eight Point">
+    <img class="trap-img" src="images/eight_point.PNG" alt="Eight Point">
     <div class="right">
       <label for="s3">Eight-Point</label>
       <select id="s3">
@@ -54,7 +93,7 @@
 
   <!-- Lashes -->
   <div class="item">
-    <img src="images/lashes.PNG" alt="Lashes">
+    <img class="trap-img" src="images/lashes.PNG" alt="Lashes">
     <div class="right">
       <label for="s4">Lashes</label>
       <select id="s4">
@@ -64,22 +103,24 @@
     </div>
   </div>
 
-  <!-- Map (pas de sélection, avec note explicative) -->
+  <!-- Map (pas de sélection) -->
   <div class="item">
-    <img src="images/map.PNG" alt="Map">
+    <img class="map-img" src="images/map.PNG" alt="Map">
     <div class="right">
       <div class="note">
         <strong>Note :</strong><br>
-              There are six traps, but only four are required for the secret.<br>
-      Three are inside the castle, three outside.<br>
-      You only need to remember three symbols out of four.<br>
-      The fourth is always in front of Stamin-Up.<br>
-      The image shows you the order to activate the traps:<br>
-      you don’t even need to collect the pages
+        There are six traps, but only four are needed.<br>
+        Three are inside the castle, three outside.<br>
+        You only need to remember three symbols.<br>
+        The fourth is always in front of Stamin-Up.<br>
+        The image shows you the order to activate.<br>
+        You don’t even need to collect the pages.
       </div>
     </div>
   </div>
 
 </body>
 </html>
+
+
 
