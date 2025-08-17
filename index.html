@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Aide Mémoire – Sélecteurs par image</title>
+  <title>Traps - Citadel of the Dead</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,19 +14,17 @@
     .item {
       display: flex;
       align-items: center;
-      background: #222;
-      border: 1px solid #555;
-      border-radius: 8px;
-      padding: 10px;
       margin-bottom: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
     }
 
     .trap-img {
-      width: 250px;       /* largeur fixe */
-      height: auto;
+      width: 200px;     /* largeur réduite */
+      height: auto;     /* conserve proportions */
       border: 2px solid red;
       border-radius: 8px;
-      margin-right: 15px;
+      margin-right: 20px;
     }
 
     .right {
@@ -41,13 +39,13 @@
     select {
       padding: 5px;
       font-size: 14px;
-      border-radius: 4px;
     }
 
     .note {
-      font-size: 14px;
-      color: #ccc;
-      margin-top: 5px;
+      background: #222;
+      padding: 10px;
+      border-left: 3px solid yellow;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -55,11 +53,11 @@
 
   <!-- Four-Point -->
   <div class="item">
-    <img class="trap-img" src="images/four_point.PNG" alt="Four Point">
+    <img class="trap-img" src="images/four_point.PNG" alt="Four-Point">
     <div class="right">
       <label for="s1">Four-Point</label>
       <select id="s1">
-        <option value="" selected disabled>— choisir —</option>
+        <option value="" selected disabled>— choose —</option>
         <option>1</option><option>2</option><option>3</option><option>4</option>
       </select>
     </div>
@@ -71,7 +69,7 @@
     <div class="right">
       <label for="s2">Circle</label>
       <select id="s2">
-        <option value="" selected disabled>— choisir —</option>
+        <option value="" selected disabled>— choose —</option>
         <option>1</option><option>2</option><option>3</option><option>4</option>
       </select>
     </div>
@@ -79,43 +77,44 @@
 
   <!-- Eight-Point -->
   <div class="item">
-    <img class="trap-img" src="images/eight_point.PNG" alt="Eight Point">
+    <img class="trap-img" src="images/eight_point.PNG" alt="Eight-Point">
     <div class="right">
       <label for="s3">Eight-Point</label>
       <select id="s3">
-        <option value="" selected disabled>— choisir —</option>
+        <option value="" selected disabled>— choose —</option>
         <option>1</option><option>2</option><option>3</option><option>4</option>
       </select>
     </div>
   </div>
 
-  <!-- Cross (ou Diamond, selon ton image) -->
+  <!-- Lashes -->
   <div class="item">
-    <img class="trap-img" src="images/cross.PNG" alt="Cross">
+    <img class="trap-img" src="images/lashes.PNG" alt="Lashes">
     <div class="right">
-      <label for="s4">Cross</label>
+      <label for="s4">Lashes</label>
       <select id="s4">
-        <option value="" selected disabled>— choisir —</option>
+        <option value="" selected disabled>— choose —</option>
         <option>1</option><option>2</option><option>3</option><option>4</option>
       </select>
     </div>
   </div>
 
-  <!-- Map (note explicative) -->
+  <!-- Map (note only) -->
   <div class="item">
     <img class="trap-img" src="images/map.PNG" alt="Map">
     <div class="right">
       <div class="note">
-        <strong>Note :</strong><br>
-        Il y a six pièges, mais seulement quatre sont nécessaires.<br>
-        Trois sont à l’intérieur du château, trois à l’extérieur.<br>
-        Le quatrième est toujours devant Stamin-Up.<br>
-        L’image montre l’ordre à activer : vous n’avez même pas besoin de collecter les pages.
+        <strong>Note:</strong><br>
+        There are six traps, but only four are required.<br>
+        Three are inside the castle, three outside.<br>
+        The fourth is always in front of Stamin-Up.<br>
+        The image shows you the order to activate: you don’t even need to collect the pages.
       </div>
     </div>
   </div>
 
 </body>
 </html>
+
 
 
