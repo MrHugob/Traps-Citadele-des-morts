@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aide Mémoire – Sélecteurs par image</title>
+  <style>
+    body{background:#1e1e1e;color:#fff;font-family:Arial,Helvetica,sans-serif;margin:20px}
+    .item{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+    .item img{width:220px;max-width:100%;border:2px solid #ff3b3b;border-radius:8px;display:block;background:#2a2a2a}
+    .right{display:flex;align-items:center;gap:10px}
+    .right label{min-width:110px;font-weight:700}
+    select{padding:8px 10px;background:#2b2b2b;color:#fff;border:1px solid #555;border-radius:8px;font-weight:700}
+    option[disabled]{color:#aaa}
+    .note{max-width:400px;font-size:14px;line-height:1.4;color:#ddd}
+  </style>
+</head>
+<body>
+
+  <!-- Four-Point -->
+  <div class="item">
+    <img src="images/four_point.jpg" alt="Four Point" />
+    <div class="right">
+      <label for="s1">Four-Point</label>
+      <select id="s1">
+        <option value="" selected disabled>— choisir —</option>
+        <option>1</option><option>2</option><option>3</option><option>4</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Circle -->
+  <div class="item">
+    <img src="images/circle.jpg" alt="Circle" />
+    <div class="right">
+      <label for="s2">Circle</label>
+      <select id="s2">
+        <option value="" selected disabled>— choisir —</option>
+        <option>1</option><option>2</option><option>3</option><option>4</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Eight-Point -->
+  <div class="item">
+    <img src="images/eight_point.jpg" alt="Eight Point" />
+    <div class="right">
+      <label for="s3">Eight-Point</label>
+      <select id="s3">
+        <option value="" selected disabled>— choisir —</option>
+        <option>1</option><option>2</option><option>3</option><option>4</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Lashes -->
+  <div class="item">
+    <img src="images/lashes.jpg" alt="Lashes" />
+    <div class="right">
+      <label for="s4">Lashes</label>
+      <select id="s4">
+        <option value="" selected disabled>— choisir —</option>
+        <option>1</option><option>2</option><option>3</option><option>4</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Map (pas de sélection, avec note explicative) -->
+  <div class="item">
+    <img src="images/map.jpg" alt="Map" />
+    <div class="right">
+      <div class="note">
+        <strong>Note :</strong><br>
+              There are six traps, but only four are required for the secret.<br>
+      Three are inside the castle, three outside.<br>
+      You only need to remember three symbols out of four.<br>
+      The fourth is always in front of Stamin-Up.<br>
+      The image shows you the order to activate the traps:<br>
+      you don’t even need to collect the pages
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
