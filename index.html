@@ -2,54 +2,52 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Aide Mémoire – Sélecteurs (compact)</title>
+  <title>Aide Mémoire – Sélecteurs par image</title>
   <style>
-    /* Base */
-    :root{
-      --bg:#1e1e1e; --fg:#fff; --muted:#cfcfcf; --accent:#ff3b3b; --card:#262626;
-    }
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif}
-    body{padding:16px}
-
-    /* Rangée compacte: image + menu collés */
-    .item{
-      display:flex; align-items:center; gap:10px;
-      background:var(--card); border:1px solid #333; border-radius:10px;
-      padding:10px 12px; margin:10px 0;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
+      margin: 20px;
     }
 
-    /* Image compacte */
-    .trap-img, .map-img{
-      width:220px;   /* compact par défaut */
-      height:auto;
-      border:2px solid var(--accent);
-      border-radius:10px;
-      background:#141414;
-      display:block;
+    .item {
+      display: flex;
+      align-items: center;
+      background: #222;
+      border: 1px solid #555;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 20px;
     }
-    .trap-img{ padding:3px; } /* petit padding pour les pièges */
 
-    /* Colonne droite compacte */
-    .right{ display:flex; align-items:center; gap:10px }
-    .right label{ font-weight:700; min-width:110px }
-    select{
-      padding:6px 10px; border-radius:8px; border:1px solid #555;
-      background:#2b2b2b; color:#fff; font-weight:700;
+    .trap-img {
+      width: 250px;       /* largeur fixe */
+      height: auto;
+      border: 2px solid red;
+      border-radius: 8px;
+      margin-right: 15px;
     }
-    option[disabled]{ color:#aaa }
 
-    /* Note à côté de la map (compact) */
-    .note{ max-width:420px; font-size:13px; line-height:1.35; color:var(--muted) }
+    .right {
+      flex: 1;
+    }
 
-    /* Effet survol */
-    .trap-img:hover{ border-color:#ffd24d; cursor:pointer }
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
 
-    /* Responsive: très compact sur petits écrans */
-    @media (max-width: 680px){
-      .item{ flex-direction:column; align-items:flex-start; gap:8px; padding:10px }
-      .trap-img, .map-img{ width: 180px }
-      .right{ width:100%; justify-content:space-between }
-      .right label{ min-width:auto }
+    select {
+      padding: 5px;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 5px;
     }
   </style>
 </head>
@@ -91,11 +89,11 @@
     </div>
   </div>
 
-  <!-- Lashes -->
+  <!-- Cross (ou Diamond, selon ton image) -->
   <div class="item">
-    <img class="trap-img" src="images/lashes.PNG" alt="Lashes">
+    <img class="trap-img" src="images/cross.PNG" alt="Cross">
     <div class="right">
-      <label for="s4">Lashes</label>
+      <label for="s4">Cross</label>
       <select id="s4">
         <option value="" selected disabled>— choisir —</option>
         <option>1</option><option>2</option><option>3</option><option>4</option>
@@ -103,24 +101,21 @@
     </div>
   </div>
 
-  <!-- Map (pas de sélection) -->
+  <!-- Map (note explicative) -->
   <div class="item">
-    <img class="map-img" src="images/map.PNG" alt="Map">
+    <img class="trap-img" src="images/map.PNG" alt="Map">
     <div class="right">
       <div class="note">
         <strong>Note :</strong><br>
-        There are six traps, but only four are needed.<br>
-        Three are inside the castle, three outside.<br>
-        You only need to remember three symbols.<br>
-        The fourth is always in front of Stamin-Up.<br>
-        The image shows you the order to activate.<br>
-        You don’t even need to collect the pages.
+        Il y a six pièges, mais seulement quatre sont nécessaires.<br>
+        Trois sont à l’intérieur du château, trois à l’extérieur.<br>
+        Le quatrième est toujours devant Stamin-Up.<br>
+        L’image montre l’ordre à activer : vous n’avez même pas besoin de collecter les pages.
       </div>
     </div>
   </div>
 
 </body>
 </html>
-
 
 
