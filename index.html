@@ -1,59 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Traps - Citadel of the Dead</title>
+  <title>Aide Mémoire – Sélecteurs par image</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #111;
       color: #eee;
-      margin: 20px;
     }
-
     .item {
       display: flex;
       align-items: center;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #444;
-      padding-bottom: 10px;
-    }
-
-    .trap-img {
-      width: 200px;     /* largeur réduite */
-      height: auto;     /* conserve proportions */
-      border: 2px solid red;
+      margin: 20px 0;
+      padding: 10px;
+      border: 2px solid #444;
       border-radius: 8px;
+      background-color: #1c1c1c;
+    }
+    .item img {
+      max-width: 250px;   /* ajuste la taille des images */
+      height: auto;
+      border: 2px solid red;
+      border-radius: 6px;
       margin-right: 20px;
     }
-
     .right {
       flex: 1;
     }
-
     label {
       font-weight: bold;
       margin-right: 10px;
     }
-
     select {
       padding: 5px;
-      font-size: 14px;
+      border-radius: 4px;
     }
-
     .note {
-      background: #222;
-      padding: 10px;
-      border-left: 3px solid yellow;
+      font-size: 14px;
       margin-top: 10px;
+      line-height: 1.4;
     }
   </style>
 </head>
 <body>
 
-  <!-- Four-Point -->
+  <!-- Four Point -->
   <div class="item">
-    <img class="trap-img" src="images/four_point.PNG" alt="Four-Point">
+    <img src="images/four_point.png" alt="Four Point">
     <div class="right">
       <label for="s1">Four-Point</label>
       <select id="s1">
@@ -65,7 +59,7 @@
 
   <!-- Circle -->
   <div class="item">
-    <img class="trap-img" src="images/circle.PNG" alt="Circle">
+    <img src="images/circle.png" alt="Circle">
     <div class="right">
       <label for="s2">Circle</label>
       <select id="s2">
@@ -75,9 +69,9 @@
     </div>
   </div>
 
-  <!-- Eight-Point -->
+  <!-- Eight Point -->
   <div class="item">
-    <img class="trap-img" src="images/eight_point.PNG" alt="Eight-Point">
+    <img src="images/eight_point.png" alt="Eight Point">
     <div class="right">
       <label for="s3">Eight-Point</label>
       <select id="s3">
@@ -89,7 +83,7 @@
 
   <!-- Lashes -->
   <div class="item">
-    <img class="trap-img" src="images/lashes.PNG" alt="Lashes">
+    <img src="images/lashes.png" alt="Lashes">
     <div class="right">
       <label for="s4">Lashes</label>
       <select id="s4">
@@ -99,14 +93,15 @@
     </div>
   </div>
 
-  <!-- Map (note only) -->
+  <!-- Map (note only, no select) -->
   <div class="item">
-    <img class="trap-img" src="images/map.PNG" alt="Map">
+    <img src="images/map.png" alt="Map">
     <div class="right">
       <div class="note">
         <strong>Note:</strong><br>
-        There are six traps, but only four are required.<br>
+        There are six traps, but only four are necessary.<br>
         Three are inside the castle, three outside.<br>
+        You only need to remember three symbols.<br>
         The fourth is always in front of Stamin-Up.<br>
         The image shows you the order to activate: you don’t even need to collect the pages.
       </div>
@@ -115,6 +110,5 @@
 
 </body>
 </html>
-
 
 
