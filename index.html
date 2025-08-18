@@ -1,131 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Traps – Citadel of the Dead</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traps - Citadel of the Dead</title>
   <style>
-    :root{
-      --bg:#111; --card:#1c1c1c; --text:#eee; --accent:#ff3b3b; --border:#444;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; padding:20px; background:var(--bg); color:var(--text);
-      font-family:Arial,Helvetica,sans-serif;
-    }
-
-    /* Carte image + panneau (titre + select) */
-    .trap{
-      display:flex; gap:18px; align-items:center;
-      margin:16px 0; padding:14px; background:var(--card);
-      border:1px solid var(--border); border-radius:10px;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
+      margin: 0;
+      padding: 20px;
     }
 
-    /* Image responsive (toutes) */
-    .trap img{
-      width:100%; max-width:320px; height:auto; display:block;
-      border:2px solid var(--accent); border-radius:10px;
-      flex:1 1 260px;      /* min 260px, grandit selon la place */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
 
-    /* Panneau de droite (titre + select) */
-    .panel{flex:1 1 240px; min-width:220px}
-    .panel h3{margin:0 0 10px 0; font-size:1.25rem}
+    .card {
+      flex: 1 1 320px;
+      max-width: 380px;
+      background: #1c1c1c;
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255,0,0,0.3);
+    }
 
-    /* Select plus gros et lisible */
-    select{
-      width:100%; max-width:220px;
-      padding:10px 12px; font-size:1.05rem; font-weight:600;
-      border-radius:8px; border:1px solid #666; background:#2b2b2b; color:#fff;
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
-    option[disabled]{color:#bbb}
 
-    /* Bloc note/map */
-    .note-card{
-      display:flex; gap:18px; align-items:center;
-      margin:22px 0; padding:14px; background:var(--card);
-      border:1px solid var(--border); border-radius:10px;
-      flex-wrap:wrap;
+    .card h3 {
+      margin: 10px 0;
+      font-size: 1.3em;
     }
-    .note-card img{
-      width:100%; max-width:320px; height:auto; border:2px solid var(--accent);
-      border-radius:10px; flex:1 1 260px;
-    }
-    .note{
-      flex:2 1 280px; background:#222; border-left:4px solid #ffd24d;
-      padding:12px; line-height:1.45; border-radius:6px;
-    }
-    .note b{display:inline-block; margin-bottom:6px}
 
-    /* Responsive : sur petit écran, on empile proprement */
-    @media (max-width:700px){
-      .trap{flex-direction:column; align-items:stretch}
-      .panel{min-width:0}
-      select{max-width:100%}
+    .card select {
+      font-size: 1.2em;
+      padding: 10px;
+      width: 90%;
+      border-radius: 8px;
+      border: 1px solid #666;
+      background: #222;
+      color: #eee;
+    }
+
+    .note {
+      margin-top: 20px;
+      padding: 15px;
+      border-left: 5px solid #ffcc00;
+      background: #222;
+      border-radius: 8px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    .note img {
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .note p {
+      margin: 0;
+      font-size: 1.1em;
+      line-height: 1.5em;
     }
   </style>
 </head>
 <body>
 
-  <!-- Four-Point -->
-  <div class="trap">
-    <img src="images/four_point.png" alt="Four-Point">
-    <div class="panel">
+  <div class="container">
+    <div class="card">
+      <img src="images/four_point.png" alt="Four-Point">
       <h3>Four-Point</h3>
-      <select id="s1">
-        <option value="" selected disabled>— choose —</option>
-        <option>1</option><option>2</option><option>3</option><option>4</option>
+      <select>
+        <option>— choose —</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
       </select>
     </div>
-  </div>
 
-  <!-- Circle -->
-  <div class="trap">
-    <img src="images/circle.png" alt="Circle">
-    <div class="panel">
+    <div class="card">
+      <img src="images/circle.png" alt="Circle">
       <h3>Circle</h3>
-      <select id="s2">
-        <option value="" selected disabled>— choose —</option>
-        <option>1</option><option>2</option><option>3</option><option>4</option>
+      <select>
+        <option>— choose —</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
       </select>
     </div>
-  </div>
 
-  <!-- Eight-Point -->
-  <div class="trap">
-    <img src="images/eight_point.png" alt="Eight-Point">
-    <div class="panel">
+    <div class="card">
+      <img src="images/eight_point.png" alt="Eight-Point">
       <h3>Eight-Point</h3>
-      <select id="s3">
-        <option value="" selected disabled>— choose —</option>
-        <option>1</option><option>2</option><option>3</option><option>4</option>
+      <select>
+        <option>— choose —</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
       </select>
     </div>
-  </div>
 
-  <!-- Lashes -->
-  <div class="trap">
-    <img src="images/lashes.png" alt="Lashes">
-    <div class="panel">
+    <div class="card">
+      <img src="images/lashes.png" alt="Lashes">
       <h3>Lashes</h3>
-      <select id="s4">
-        <option value="" selected disabled>— choose —</option>
-        <option>1</option><option>2</option><option>3</option><option>4</option>
+      <select>
+        <option>— choose —</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
       </select>
     </div>
   </div>
 
-  <!-- Map + Note -->
-  <div class="note-card">
+  <div class="note">
     <img src="images/map.png" alt="Map">
-    <div class="note">
+    <p>
       <b>Note:</b><br>
       There are six traps, but only four are required.<br>
       Three are inside the castle, three outside.<br>
       You only need to remember three symbols.<br>
       The fourth is always in front of Stamin-Up.<br>
-      The image shows you the order to activate: you don’t even need to collect the pages.
-    </div>
+      The image shows the order to activate: you don’t even need them.
+    </p>
   </div>
 
 </body>
