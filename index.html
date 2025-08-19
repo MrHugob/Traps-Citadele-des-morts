@@ -6,79 +6,82 @@
   <title>Traps - Citadel of the Dead</title>
   <style>
     :root{
-      --bg:#111; --card:#1c1c1c; --text:#eee; --accent:#ff3b3b; --border:#444;
+      --bg:#111; --card:#1c1c1c; --text:#eee; --accent:#ff3b3b; --border:#444; --muted:#cfcfcf;
     }
     *{box-sizing:border-box}
-    body{
-      margin:0; padding:20px; background:var(--bg); color:var(--text);
-      font-family:Arial,Helvetica,sans-serif;
-    }
+    body{margin:0; padding:16px; background:var(--bg); color:var(--text); font-family:Arial,Helvetica,sans-serif}
 
-    /* ----- Grille principale ----- */
-    .container{
-      display:flex; flex-wrap:wrap; justify-content:center; gap:20px;
+    /* ===== Cartes en ligne (desktop/tablette) ===== */
+    .cards{
+      display:flex; flex-wrap:wrap; justify-content:center; gap:18px;
       max-width:1200px; margin:0 auto;
     }
     .card{
       flex:1 1 320px; max-width:380px;
-      background:var(--card); border:1px solid var(--border);
-      border-radius:10px; padding:15px; text-align:center;
-      box-shadow:0 0 10px rgba(255,0,0,.25);
+      background:var(--card); border:1px solid var(--border); border-radius:10px;
+      padding:12px; text-align:center;
     }
     .card img{
-      width:100%; height:auto; border-radius:10px; margin-bottom:10px;
-      border:2px solid var(--accent); display:block;
+      width:100%; height:auto; border-radius:10px; border:2px solid var(--accent);
+      margin-bottom:8px;
     }
-    .card h3{margin:8px 0 10px; font-size:1.25rem}
+    .card h3{margin:6px 0 8px; font-size:1.2rem}
     .card select{
       width:90%; max-width:280px;
-      padding:10px 12px; font-size:1.15rem; font-weight:600;
+      padding:10px; font-size:1.05rem; font-weight:600;
       border-radius:8px; border:1px solid #666; background:#222; color:#fff;
     }
 
-    /* ----- Bloc note + map ----- */
+    /* ===== Bloc Map + Note ===== */
     .note-card{
-      max-width:1200px; margin:22px auto 0; padding:15px;
+      max-width:1200px; margin:18px auto 0; padding:12px;
       background:var(--card); border:1px solid var(--border); border-radius:10px;
     }
-    .note-wrap{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .note-wrap{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
     .note-wrap img{
-      width:100%; max-width:380px; height:auto; border-radius:10px;
-      border:2px solid var(--accent);
+      width:100%; max-width:360px; height:auto; border-radius:10px; border:2px solid var(--accent);
     }
     .note{
       flex:1 1 320px; background:#222; border-left:4px solid #ffd24d;
-      padding:12px; line-height:1.45; border-radius:6px; font-size:1.05rem;
+      padding:10px; line-height:1.4; border-radius:6px; color:var(--muted);
+      font-size:1rem;
     }
-    .note b{display:inline-block; margin-bottom:6px}
+    .note b{display:inline-block; margin-bottom:6px; color:#fff}
 
-    /* ===== Mobile: 2 colonnes + images compactes ===== */
-    @media (max-width: 600px){
-      .container{
+    /* ===== Mobile (≤600px): 2 colonnes + hauteur limitée pour réduire le scroll ===== */
+    @media (max-width:600px){
+      .cards{
         display:grid;
         grid-template-columns: repeat(2, 1fr);
-        gap:12px;
+        gap:10px;
       }
-      .card{max-width:unset; padding:10px}
+      .card{
+        padding:8px; max-width:unset;
+      }
       .card img{
-        width:100%;
-        max-height:22vh;     /* limite la hauteur pour réduire le scroll */
-        height:auto; object-fit:cover; border-radius:8px;
+        max-height:20vh;   /* limite la hauteur à 20% de l’écran */
+        object-fit:cover;
       }
-      .card h3{font-size:1rem; margin:6px 0}
-      .card select{font-size:1rem; padding:8px; width:100%}
+      .card h3{
+        font-size:.95rem; margin:4px 0 6px;
+      }
+      .card select{
+        width:100%; padding:8px; font-size:.95rem; /* lisible sans zoom mais plus compact */
+      }
 
-      .note-card{padding:10px}
+      .note-card{padding:8px}
       .note-wrap img{
-        max-height:26vh; height:auto; object-fit:cover;
+        max-height:22vh; object-fit:cover;
       }
-      .note{font-size:.95rem; padding:10px}
+      .note{
+        font-size:.9rem; line-height:1.3; padding:8px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <div class="cards">
     <div class="card">
       <img src="images/four_point.png" alt="Four-Point">
       <h3>Four-Point</h3>
@@ -132,5 +135,3 @@
 
 </body>
 </html>
-
-
